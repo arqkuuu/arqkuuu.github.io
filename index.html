@@ -12,7 +12,7 @@
     transform: translateY(-20px);
   }
   100% {
-    transform: translateY(calc(100vh));
+    transform: translateY(calc(99vh));
     opacity: 0; 
   }
 }
@@ -295,20 +295,21 @@
   }
   function createSnowflakes() {
   const body = document.querySelector("body");
-
+  const viewportWidth = document.body.clientWidth;
       for (let i = 0; i < 70; i++) {
+        setTimeout(() => {
         const snowflake = document.createElement("span");
         snowflake.innerText = "*"; 
         snowflake.classList.add("snowflake");
         const viewportWidth = document.body.clientWidth;
         snowflake.style.top = `${-20 - Math.random() * 100}px`; 
-        snowflake.style.left = `${Math.random() * 99.5}vw`;
+        snowflake.style.left = `${Math.random() * 99}vw`;
         snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; 
         body.appendChild(snowflake);
-          
         snowflake.addEventListener("animationend", () => {
       snowflake.remove(); 
     });
+  }, Math.random() * 3000);
       }
     }
     createSnowflakes();
