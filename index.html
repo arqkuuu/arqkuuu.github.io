@@ -12,7 +12,7 @@
     transform: translateY(-20px);
   }
   100% {
-    transform: translateY(calc(99vh));
+    transform: translateY(calc(99vh)) rotate(360deg);
     opacity: 0; 
   }
 }
@@ -305,6 +305,7 @@
         snowflake.style.top = `${-20 - Math.random() * 100}px`; 
         snowflake.style.left = `${Math.random() * 99}vw`;
         snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; 
+        
         body.appendChild(snowflake);
         snowflake.addEventListener("animationend", () => {
       snowflake.remove(); 
